@@ -3,6 +3,7 @@ from json import load
 from random import choice
 
 app = Flask(__name__)
+app.debug = True
 
 @app.route('/')
 def main():
@@ -18,6 +19,5 @@ def main():
     
     return render_template("main.html", q=q, a=a, s=s)  
 
-app.debug = True
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)
